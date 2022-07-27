@@ -13,6 +13,11 @@ const Meal = () => {
       </div>
       <div className="container">
               <MealItem />
+              <MealItem />
+              <MealItem />
+              <MealItem />
+              <MealItem />
+              <MealItem />
       </div>
     </div>
     </>

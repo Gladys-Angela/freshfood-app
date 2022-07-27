@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Meal from './component/Meal'
 
 function App() {
   return (
-    <div className="App">
-      <div className='bg-info'>This is FreshFood App</div>
-    </div>
+    <>
+    <Meal/>
+    </>
   );
 }
 

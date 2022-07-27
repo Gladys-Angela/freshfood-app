@@ -1,5 +1,6 @@
 import React from 'react';
-import Meal from './component/Meal'
+import "./App.css";
+import Meal from './component/Meal';
 
 function App() {
   return (

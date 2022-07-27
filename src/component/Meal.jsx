@@ -6,7 +6,7 @@ const Meal = () => {
   const [url,setUrl]=useState("https:/www.themealdb.com/api/json/v1/1/search.php?f=a");
   useEffect(()=>{
     fetch(url).then(res=>res.json()).then(data=>{
-      console.log(data);
+      console.log(data.meals);
     })
     
   },[url])

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import MealItem from './MealItem';
 const Meal = () => {
   return (
     <>
@@ -9,7 +9,10 @@ const Meal = () => {
         <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae adipisci odit dolorum molestias officia.</h4>
       </div>
       <div className="searchBox">
-        <input type="search" className="serach-bar" />
+        <input type="search" className="search-bar" />
+      </div>
+      <div className="container">
+              <MealItem />
       </div>
     </div>
     </>

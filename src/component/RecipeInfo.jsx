@@ -48,7 +48,7 @@ const RecipeInfo = () => {
             </div>
 
             <div className="video">
-                <iframe src={`https://www.youtube.com/embed/${vId}`}></iframe>
+                <iframe title="recording" src={`https://www.youtube.com/embed/${vId}`}></iframe>
             </div>
         </div>
         </>)

@@ -3,7 +3,7 @@ import { useState } from "react";
 import MealItem from './MealItem';
 import RecipeIndex from './RecipeIndex';
 const Meal = () => {
-  const [url,setUrl]=useState("https://thawing-depths-16131.herokuapp.com/meals");
+  const [url,setUrl]=useState("https:/thawing-depths-16131.herokuapp.com/meals");
   const [item,setItem]=useState();
   const [show, setShow]=useState(false);
   const [search, setSearch]=useState("");

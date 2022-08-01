@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/freshfood-app/static/css/main.a79756a7.css",
-    "main.js": "/freshfood-app/static/js/main.5e05cf49.js",
-    "index.html": "/freshfood-app/index.html",
-    "main.a79756a7.css.map": "/freshfood-app/static/css/main.a79756a7.css.map",
-    "main.5e05cf49.js.map": "/freshfood-app/static/js/main.5e05cf49.js.map"
+    "main.css": "/static/css/main.c4ec8908.css",
+    "main.js": "/static/js/main.50b1c80d.js",
+    "index.html": "/index.html",
+    "main.c4ec8908.css.map": "/static/css/main.c4ec8908.css.map",
+    "main.50b1c80d.js.map": "/static/js/main.50b1c80d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a79756a7.css",
-    "static/js/main.5e05cf49.js"
+    "static/css/main.c4ec8908.css",
+    "static/js/main.50b1c80d.js"
   ]
 }

@@ -1,52 +1,73 @@
-import React, { useEffect } from 'react';
-import { useState } from "react";
-import MealItem from './MealItem';
-import RecipeIndex from './RecipeIndex';
+import React, { useState } from "react";
+import MealItem from "./MealItem";
+import RecipeIndex from "./RecipeIndex";
 const Meal = () => {
-  const [url,setUrl]=useState("https://thawing-depths-16131.herokuapp.com/meals");
-  const [item,setItem]=useState();
-  const [show, setShow]=useState(false);
-  const [search, setSearch]=useState("");
-  useEffect(()=>{
-    fetch(url).then(res=>res.json()).then(data=>{
-      // console.log(data.meals);
-      setItem(data.meals);
-      setShow(true);
-    })
-    
-  },[url])
+  const api = "https://thawing-depths-16131.herokuapp.com/meals";
 
-  const setIndex=(alpha)=>{
-    setUrl(`https:/www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`)
+  const [itemsList, setItemsList] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  function searchByAlphabet(alphabet) {
+    setIsLoading(true);
+    fetch(`${api}?f=${alphabet}`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res && res.length) {
+          const filteredList = res.filter(
+            (item) => item.strMeal.charAt(0) === alphabet
+          );
+          setItemsList(filteredList);
+        } else {
+          setItemsList([]);
+        }
+        setIsLoading(false);
+      });
   }
-  const searchRecipe=(evt)=>{
-    if(evt.key==="Enter"){
-      setUrl(`https:/www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+
+  function searchByKeyword(evt) {
+    setIsLoading(true);
+    if (evt.key === "Enter") {
+      const query = evt.target.value;
+      fetch(`${api}?s=${query}`)
+        .then((res) => res.json())
+        .then((res) => {
+          if (res && res.length) {
+            const regex = new RegExp(`${query}*`, "i");
+            const filteredList = res.filter((item) => {
+              console.log(item.strMeal, regex.test(item.strMeal));
+              return regex.test(item.strMeal);
+            });
+            console.log(filteredList);
+            setItemsList(filteredList);
+          } else {
+            setItemsList([]);
+          }
+          setIsLoading(false);
+        });
     }
   }
- 
+
   return (
-    <>
-    <div className='main'>
-      <div className='heading'>
+    <div className="main">
+      <div className="heading">
         <h1>Search Your Food Recipe</h1>
         <h4>Treat yourself with the best food ever.</h4>
       </div>
       <div className="searchBox">
-        <input type="search" className="search-bar"
-        onChange={e=>setSearch(e.target.value)} onKeyPress={searchRecipe}/>
+        <input type="search" className="search-bar" onKeyUp={searchByKeyword} />
       </div>
       <div className="container">
-               {
-                show ?  <MealItem data={item}/>:"Not Found"
-               }
-            
+        {!isLoading &&
+          itemsList.length &&
+          itemsList.map((item) => {
+            return <MealItem item={item} />;
+          })}
       </div>
       <div className="indexContainer">
-              <RecipeIndex alphaIndex={(alpha)=>setIndex(alpha)}/>
-                     </div>
+        <RecipeIndex alphaIndex={(alpha) => searchByAlphabet(alpha)} />
+      </div>
     </div>
-    </>
-  )
-}
+  );
+};
 export default Meal;

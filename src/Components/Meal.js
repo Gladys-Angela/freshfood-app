@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MealItem from "./MealItem";
 import RecipeIndex from "./RecipeIndex";
 const Meal = () => {
-  const api = "https://thawing-depths-16131.herokuapp.com/meals";
+  const api = "https://backend65.herokuapp.com/meals";
 
   const [itemsList, setItemsList] = useState([]);
 

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 var id="";
 const Recipe = () => {
     const [item, setItem] = useState(); 
-    const { recipeId } = useParams();
+    const [ recipeId ] = useParams();
     if (recipeId !==" ") {
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`).then(res => res.json()).then(data => {
             setItem(data.meals[0]);  

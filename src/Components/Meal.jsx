@@ -7,7 +7,7 @@ const Meal = () => {
     const [search,setSearch]=useState();
     const [show,setShow]=useState(false);
     const [item,setItem]=useState("");
-    const [url,setUrl]=useState("https://thawing-depths-16131.herokuapp.com/meals");
+    const [url,setUrl]=useState("https://www.themealdb.com/api/json/v1/1/search.php?f=a");
    
     useEffect(()=>{
         fetch(url).then(res=>res.json()).then(data=> {
@@ -27,7 +27,7 @@ return (
         <div className="main">
             <div className="heading">
                 <h1>Search Your Food Recipe</h1>
-                <h4>Test yourself with the best food ever</h4>
+                <h4>Test yourself with the best</h4>
             </div>
             <div className="searchBox">
                 <input type="search" className="search-bar" onChange={e=> setSearch(e.target.value)} onKeyPress={searchRecipe}/>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReacipeIndex = ({alphaIndex}) => {
+const RecipeIndex = ({alphaIndex}) => {
    const alpha = ['A', "B", "C", "D", "E", "F", "J", "I", "J", "k", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
    let num=0;
    return (
@@ -16,4 +16,4 @@ const ReacipeIndex = ({alphaIndex}) => {
         </>
     )
 }
-export default ReacipeIndex;
+export default RecipeIndex;

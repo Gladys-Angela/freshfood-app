@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/freshfood-app/static/css/main.c4ec8908.css",
+    "main.js": "/freshfood-app/static/js/main.ce774cd2.js",
+    "index.html": "/freshfood-app/index.html",
+    "main.c4ec8908.css.map": "/freshfood-app/static/css/main.c4ec8908.css.map",
+    "main.ce774cd2.js.map": "/freshfood-app/static/js/main.ce774cd2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4ec8908.css",
+    "static/js/main.ce774cd2.js"
+  ]
+}
